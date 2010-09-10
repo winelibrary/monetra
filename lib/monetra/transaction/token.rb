@@ -26,7 +26,7 @@ module Monetra
 			end
 			
 			
-			def new(attributes={})
+			def self.new(attributes={})
 				request = Request.new(attributes)
 				body = Connection.post(request)
 				response = Response.new(body)

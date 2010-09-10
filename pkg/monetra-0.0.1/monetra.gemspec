@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dan Ahern"]
-  s.date = %q{2010-09-09}
+  s.date = %q{2010-09-10}
   s.description = %q{A gem that uses the Monetra API to perform actions}
   s.email = %q{gems@danahern.com}
   s.extra_rdoc_files = ["lib/monetra.rb", "lib/monetra/configuration.rb", "lib/monetra/connection.rb", "lib/monetra/transaction.rb", "lib/monetra/transaction/admin.rb", "lib/monetra/transaction/engine.rb", "lib/monetra/transaction/token.rb", "lib/monetra/transaction/user.rb"]
