@@ -50,15 +50,3 @@ module Monetra
 		end
 	end
 end
-
-
-# require 'rubygems'
-# require 'monetra'
-# Monetra::Configuration.options(:host => "mags.winelibrary.com", :port => "8333")
-# Monetra::Transaction::Token.new(:username => "winelibrary-ecomm", :password => "WiNELiB7!", :action => "Admin", :type => "Store", :admin => "recurringlist", :token => "1001000000000056")
-
-# require 'monetra'
-# Monetra::Configuration.options(:host => "mags.winelibrary.com", :port => "8333")
-# Monetra::Transaction::Token.new(:username => "winelibrary-ecomm", :password => "WiNELiB7!", :action => "Admin", :type => "Store", :admin => "recurringadd", :cardholdername => "Daniel Ahern", :street => "4657 Lancer Way", :zip => "89121", :expdate => "0912", :account => "4111111111111111")
-
-# {"MonetraResp"=>{"DataTransferStatus"=>{"code"=>"SUCCESS"}, "Resp"=>{"identifier"=>"1", "code"=>"DENY", "msoft_code"=>"DATA_BADTRANS", "phard_code"=>"UNKNOWN", "verbiage"=>"UNKNOWN TRANSACTION TYPE"}}}
