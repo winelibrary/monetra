@@ -1,6 +1,7 @@
 require 'net/http'
 require 'open-uri'
 require 'builder'
+require 'active_support/core_ext'
 
 module Monetra
 	require 'monetra/configuration'
@@ -9,4 +10,5 @@ module Monetra
 	require 'monetra/transaction/engine'
 	require 'monetra/transaction/token'
 	require 'monetra/transaction/user'
+	require 'monetra/parse'
 end
