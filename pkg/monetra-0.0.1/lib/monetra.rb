@@ -2,6 +2,7 @@ require 'net/http'
 require 'open-uri'
 require 'builder'
 require 'active_support/core_ext'
+require 'csv'
 
 module Monetra
 	require 'monetra/configuration'
