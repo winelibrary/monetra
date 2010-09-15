@@ -8,7 +8,7 @@ module Monetra
 				when "Hash"
 					options_or_path_to
 				when "NilClass"
-					YAML::load_file(File.join(Rails.root, 'config', 'monetra.yml'))
+					YAML::load_file(File.join(Rails.root, 'config', 'monetra.yml'))[Rails.env]
 				end 
 			end
 		

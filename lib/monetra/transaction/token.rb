@@ -36,8 +36,49 @@ module Monetra
 			
 			class << self
 				def new(attributes={})
-					request = Request.new(attributes)
-	#				raise Monetra::Parse.request(request).inspect
+					request = Request.new(attributes.merge(:action => "Admin", :type => "recurringadd"))
+					body = Connection.post(Monetra::Parse.request(request))
+					body = Hash.from_xml(body)
+					transfer_status = body["MonetraResp"]["DataTransferStatus"]
+					responses = case body["MonetraResp"]["Resp"].class.to_s
+					when "Hash"
+						hash_response(body["MonetraResp"]["Resp"])
+					when "Array"
+						array_response(body["MonetraResp"]["Resp"])
+					end
+					responses
+				end
+				
+				def find(attributes={})
+					request = Request.new(attributes.merge(:action => "Admin", :admin => "recurringlist"))
+					body = Connection.post(Monetra::Parse.request(request))
+					body = Hash.from_xml(body)
+					transfer_status = body["MonetraResp"]["DataTransferStatus"]
+					responses = case body["MonetraResp"]["Resp"].class.to_s
+					when "Hash"
+						hash_response(body["MonetraResp"]["Resp"])
+					when "Array"
+						array_response(body["MonetraResp"]["Resp"])
+					end
+					responses
+				end
+				
+				def edit(attributes={})
+					request = Request.new(attributes.merge(:action => "Admin", :admin => "recurringedit"))
+					body = Connection.post(Monetra::Parse.request(request))
+					body = Hash.from_xml(body)
+					transfer_status = body["MonetraResp"]["DataTransferStatus"]
+					responses = case body["MonetraResp"]["Resp"].class.to_s
+					when "Hash"
+						hash_response(body["MonetraResp"]["Resp"])
+					when "Array"
+						array_response(body["MonetraResp"]["Resp"])
+					end
+					responses
+				end
+				
+				def destroy(attributes={})
+					request = Request.new(attributes.merge(:action => "Admin", :admin => "recurringdel"))
 					body = Connection.post(Monetra::Parse.request(request))
 					body = Hash.from_xml(body)
 					transfer_status = body["MonetraResp"]["DataTransferStatus"]
