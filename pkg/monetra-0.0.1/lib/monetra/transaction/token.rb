@@ -36,7 +36,7 @@ module Monetra
 			
 			class << self
 				def new(attributes={})
-					request = Request.new(attributes.merge(:action => "Admin", :type => "recurringadd"))
+					request = Request.new(attributes.merge(:action => "Admin", :type => "store", :admin => "recurringadd"))
 					body = Connection.post(Monetra::Parse.request(request))
 					body = Hash.from_xml(body)
 					transfer_status = body["MonetraResp"]["DataTransferStatus"]
@@ -50,7 +50,7 @@ module Monetra
 				end
 				
 				def find(attributes={})
-					request = Request.new(attributes.merge(:action => "Admin", :admin => "recurringlist"))
+					request = Request.new(attributes.merge(:action => "Admin", :type => "store", :admin => "recurringlist"))
 					body = Connection.post(Monetra::Parse.request(request))
 					body = Hash.from_xml(body)
 					transfer_status = body["MonetraResp"]["DataTransferStatus"]
@@ -64,7 +64,7 @@ module Monetra
 				end
 				
 				def edit(attributes={})
-					request = Request.new(attributes.merge(:action => "Admin", :admin => "recurringedit"))
+					request = Request.new(attributes.merge(:action => "Admin", :type => "store", :admin => "recurringedit"))
 					body = Connection.post(Monetra::Parse.request(request))
 					body = Hash.from_xml(body)
 					transfer_status = body["MonetraResp"]["DataTransferStatus"]
@@ -78,7 +78,7 @@ module Monetra
 				end
 				
 				def destroy(attributes={})
-					request = Request.new(attributes.merge(:action => "Admin", :admin => "recurringdel"))
+					request = Request.new(attributes.merge(:action => "Admin", :type => "store", :admin => "recurringdel"))
 					body = Connection.post(Monetra::Parse.request(request))
 					body = Hash.from_xml(body)
 					transfer_status = body["MonetraResp"]["DataTransferStatus"]
