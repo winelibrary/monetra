@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('monetra', '0.0.2') do |p|
+Echoe.new('monetra', '0.0.2.1') do |p|
   p.description    = "A gem that uses the Monetra API to perform actions"
   p.url            = "http://github.com/winelibrary/monetra"
   p.author         = "Dan Ahern"

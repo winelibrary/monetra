@@ -13,19 +13,19 @@ module Monetra
 			end
 		
 			def user_name
-				options[:user_name]
+				Monetra::Configuration.options["user_name"]
 			end
 		
 			def password
-				options[:password]
+				Monetra::Configuration.options["password"]
 			end
 		
 			def host
-				options[:host]
+				Monetra::Configuration.options["host"]
 			end
 		
 			def port
-				options[:port]
+				Monetra::Configuration.options["port"]
 			end
 		end
 	end
