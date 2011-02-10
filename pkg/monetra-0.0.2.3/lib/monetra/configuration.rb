@@ -27,6 +27,10 @@ module Monetra
 			def port
 				Monetra::Configuration.options["port"]
 			end
+			
+			def use_ssl?
+			 (Monetra::Configuration.options["use_ssl"] == "true")
+			end
 		end
 	end
 end

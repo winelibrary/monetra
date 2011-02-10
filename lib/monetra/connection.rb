@@ -6,6 +6,7 @@ module Monetra
 			end
 			
 			def post(data)
+			  base.use_ssl = Monetra::Configuration.use_ssl?
 				request = base.post("/", data)
 				request.body
 			end
