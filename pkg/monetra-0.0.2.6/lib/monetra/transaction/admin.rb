@@ -1,7 +1,7 @@
 module Monetra
-	module Transaction
-		class Admin
-			
-		end
-	end
+  module Transaction
+    class Admin
+
+    end
+  end
 end
