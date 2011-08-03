@@ -3,6 +3,7 @@ require 'open-uri'
 require 'builder'
 require 'active_support/core_ext'
 require 'csv'
+require 'openssl'
 
 module Monetra
   require 'monetra/configuration'
