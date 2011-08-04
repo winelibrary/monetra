@@ -3,7 +3,7 @@ require 'psych'
 require 'rake'
 require 'echoe'
 YAML::ENGINE.yamler = 'syck'
-Echoe.new('monetra', '0.1.9') do |p|
+Echoe.new('monetra', '0.1.10') do |p|
   p.description    = "A gem that uses the Monetra API to perform actions"
   p.url            = "http://github.com/winelibrary/monetra"
   p.author         = ["Dan Ahern", "John Kassimatis", "Brian Woolley"]
