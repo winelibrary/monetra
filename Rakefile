@@ -3,7 +3,7 @@ require 'psych'
 require 'rake'
 require 'echoe'
 
-Echoe.new('monetra', '0.0.2.7') do |p|
+Echoe.new('monetra', '0.1.8') do |p|
   p.description    = "A gem that uses the Monetra API to perform actions"
   p.url            = "http://github.com/winelibrary/monetra"
   p.author         = ["Dan Ahern", "John Kassimatis", "Brian Woolley"]
