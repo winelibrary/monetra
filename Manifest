@@ -9,3 +9,4 @@ lib/monetra/transaction/admin.rb
 lib/monetra/transaction/engine.rb
 lib/monetra/transaction/token.rb
 lib/monetra/transaction/user.rb
+monetra.gemspec

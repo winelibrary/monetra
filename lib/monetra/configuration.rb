@@ -29,7 +29,7 @@ module Monetra
       end
 
       def use_ssl?
-       Monetra::Configuration.options["use_ssl"]
+        Monetra::Configuration.options["use_ssl"]
       end
     end
   end
