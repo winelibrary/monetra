@@ -16,20 +16,40 @@ module Monetra
         Monetra::Configuration.options["user_name"]
       end
 
+      def user_name=(value)
+        Monetra::Configuration.options["user_name"] = value
+      end
+
       def password
         Monetra::Configuration.options["password"]
+      end
+
+      def password=(value)
+        Monetra::Configuration.options["password"] = value
       end
 
       def host
         Monetra::Configuration.options["host"]
       end
 
+      def host=(value)
+        Monetra::Configuration.options["host"] = value
+      end
+
       def port
         Monetra::Configuration.options["port"]
       end
 
+      def port=(value)
+        Monetra::Configuration.options["port"] = value
+      end
+
       def use_ssl?
         Monetra::Configuration.options["use_ssl"]
+      end
+
+      def use_ssl=(value)
+        Monetra::Configuration.options["use_ssl"] = value
       end
     end
   end
