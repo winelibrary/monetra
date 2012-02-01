@@ -19,10 +19,10 @@ module Monetra
           case
           when ENV["SSL_CERT_FILE"]
             base.ca_file = ENV["SSL_CERT_FILE"]
-          when File.exists?('/usr/lib/ssl/certs/ca-certificates.crt') # heroku
-            base.ca_file = '/usr/lib/ssl/certs/ca-certificates.crt'  
           when File.exists?('/etc/ssl/certs') # Ubuntu
             base.ca_path = '/etc/ssl/certs'
+          when File.exists?('/usr/lib/ssl/certs/ca-certificates.crt') # heroku
+            base.ca_file = '/usr/lib/ssl/certs/ca-certificates.crt'  
           when File.exists?('/opt/local/share/curl/curl-ca-bundle.crt') # Mac OS X
             base.ca_file = '/opt/local/share/curl/curl-ca-bundle.crt'
           end
