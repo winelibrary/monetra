@@ -8,14 +8,7 @@ module Monetra
         when "Hash"
           options_or_path_to.stringify_keys!
         when "NilClass"
-          case
-          when defined?(Rails)
-            YAML::load_file(File.join(Rails.root, 'config', 'monetra.yml'))[Rails.env].stringify_keys!
-          when ENV['RACK_ENV']
-            YAML::load_file(File.join('.', 'config', 'monetra.yml'))[ENV['RACK_ENV']].stringify_keys!
-          when ENV['RAILS_ENV']
-            YAML::load_file(File.join('.', 'config', 'monetra.yml'))[ENV['RAILS_ENV']].stringify_keys!
-          end
+          YAML::load_file(File.join(Rails.root, 'config', 'monetra.yml'))[Rails.env].stringify_keys! if defined?(Rails)
         end
       end
 
