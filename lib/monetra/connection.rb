@@ -16,6 +16,7 @@ module Monetra
       def ssl_certificate
         if RUBY_VERSION.to_f == 1.9
           # base.verify_mode = OpenSSL::SSL::VERIFY_PEER
+          base.verify_mode = OpenSSL::SSL::VERIFY_NONE
           case
           when ENV["SSL_CERT_FILE"]
             base.ca_file = ENV["SSL_CERT_FILE"]
