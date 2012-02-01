@@ -4,11 +4,11 @@ module Monetra
       def options(options_or_path_to=nil)
         @options ||= case options_or_path_to.class.to_s
         when "String"
-          YAML::load_file(options_or_path_to).stringify_keys!
+          YAML::load_file(options_or_path_to).stringify_keys
         when "Hash"
-          options_or_path_to.stringify_keys!
+          options_or_path_to.stringify_keys
         when "NilClass"
-          YAML::load_file(File.join(Rails.root, 'config', 'monetra.yml'))[Rails.env].stringify_keys! if defined?(Rails)
+          YAML::load_file(File.join(Rails.root, 'config', 'monetra.yml'))[Rails.env].stringify_keys if defined?(Rails)
         end
       end
 
