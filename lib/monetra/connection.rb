@@ -14,7 +14,7 @@ module Monetra
 
       private
       def ssl_certificate
-        if RUBY_VERSION.to_f == 1.9
+        if RUBY_VERSION.to_f > 1.9
           # base.verify_mode = OpenSSL::SSL::VERIFY_PEER
           base.verify_mode = OpenSSL::SSL::VERIFY_NONE
           case
@@ -23,7 +23,7 @@ module Monetra
           when File.exists?('/etc/ssl/certs') # Ubuntu
             base.ca_path = '/etc/ssl/certs'
           when File.exists?('/usr/lib/ssl/certs/ca-certificates.crt') # heroku
-            base.ca_file = '/usr/lib/ssl/certs/ca-certificates.crt'  
+            base.ca_file = '/usr/lib/ssl/certs/ca-certificates.crt'
           when File.exists?('/opt/local/share/curl/curl-ca-bundle.crt') # Mac OS X
             base.ca_file = '/opt/local/share/curl/curl-ca-bundle.crt'
           end
